@@ -11,3 +11,5 @@ document.getElementById('cadastrarCliente')
 
 document.getElementById('modalClose')
     .addEventListener('click', closeModal)
+
+    
