@@ -43,6 +43,24 @@ const createClient = (client) => {
     setLocalStorage(dbClient)
 }
 
+const isValidFields = () => {
+    return document.getElementById('form').reportValidity()
+}
+
+//Interação com o usuario
+
+const salveClient = () => {
+    if (isValidFields()) {
+        const client = {
+            nome: document.getElementById('nome').value,
+            email: document.getElementById('email').value,
+            celular: document.getElementById('celular').value,
+            cidade: document.getElementById('cidade').value,
+        }
+        console.log('cadastrando cliente')
+    }
+}
+
 //Eventos
 
 document.getElementById('cadastrarCliente')
@@ -51,4 +69,7 @@ document.getElementById('cadastrarCliente')
 document.getElementById('modalClose')
     .addEventListener('click', closeModal)
 
-    
+document.getElementById('salvar')
+    .addEventListener('click', salveClient)
+
+     
